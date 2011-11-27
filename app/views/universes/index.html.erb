@@ -1,0 +1,23 @@
+<h1>Listing universes</h1>
+
+<table>
+  <tr>
+    <th>Turn</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @universes.each do |universe| %>
+  <tr>
+    <td><%= universe.turn %></td>
+    <td><%= link_to 'Show', universe %></td>
+    <td><%= link_to 'Edit', edit_universe_path(universe) %></td>
+    <td><%= link_to 'Destroy', universe, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Universe', new_universe_path %>
