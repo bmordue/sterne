@@ -1,0 +1,41 @@
+<%= form_for(@ship) do |f| %>
+  <% if @ship.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ship.errors.count, "error") %> prohibited this ship from being saved:</h2>
+
+      <ul>
+      <% @ship.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :player_id %><br />
+    <%= f.text_field :player_id %>
+  </div>
+  <div class="field">
+    <%= f.label :locationX %><br />
+    <%= f.text_field :locationX %>
+  </div>
+  <div class="field">
+    <%= f.label :locationY %><br />
+    <%= f.text_field :locationY %>
+  </div>
+  <div class="field">
+    <%= f.label :destination %><br />
+    <%= f.text_field :destination %>
+  </div>
+  <div class="field">
+    <%= f.label :hitpoints %><br />
+    <%= f.text_field :hitpoints %>
+  </div>
+  <div class="field">
+    <%= f.label :shiptype_id %><br />
+    <%= f.text_field :shiptype_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

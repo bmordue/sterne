@@ -1,4 +1,6 @@
 Sterne::Application.routes.draw do
+  resources :ships
+
   resources :ship_types
 
   resources :players

@@ -1,0 +1,33 @@
+<h1>Listing ships</h1>
+
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Locationx</th>
+    <th>Locationy</th>
+    <th>Destination</th>
+    <th>Hitpoints</th>
+    <th>Shiptype</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ships.each do |ship| %>
+  <tr>
+    <td><%= ship.player_id %></td>
+    <td><%= ship.locationX %></td>
+    <td><%= ship.locationY %></td>
+    <td><%= ship.destination %></td>
+    <td><%= ship.hitpoints %></td>
+    <td><%= ship.shiptype_id %></td>
+    <td><%= link_to 'Show', ship %></td>
+    <td><%= link_to 'Edit', edit_ship_path(ship) %></td>
+    <td><%= link_to 'Destroy', ship, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ship', new_ship_path %>
