@@ -1,0 +1,53 @@
+<%= form_for(@planet) do |f| %>
+  <% if @planet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@planet.errors.count, "error") %> prohibited this planet from being saved:</h2>
+
+      <ul>
+      <% @planet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :player_id %><br />
+    <%= f.text_field :player_id %>
+  </div>
+  <div class="field">
+    <%= f.label :locationX %><br />
+    <%= f.text_field :locationX %>
+  </div>
+  <div class="field">
+    <%= f.label :locationY %><br />
+    <%= f.text_field :locationY %>
+  </div>
+  <div class="field">
+    <%= f.label :manufacturing %><br />
+    <%= f.text_field :manufacturing %>
+  </div>
+  <div class="field">
+    <%= f.label :growth %><br />
+    <%= f.text_field :growth %>
+  </div>
+  <div class="field">
+    <%= f.label :research %><br />
+    <%= f.text_field :research %>
+  </div>
+  <div class="field">
+    <%= f.label :population %><br />
+    <%= f.text_field :population %>
+  </div>
+  <div class="field">
+    <%= f.label :science %><br />
+    <%= f.text_field :science %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

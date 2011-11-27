@@ -1,0 +1,39 @@
+<h1>Listing planets</h1>
+
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Locationx</th>
+    <th>Locationy</th>
+    <th>Manufacturing</th>
+    <th>Growth</th>
+    <th>Research</th>
+    <th>Population</th>
+    <th>Science</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @planets.each do |planet| %>
+  <tr>
+    <td><%= planet.player_id %></td>
+    <td><%= planet.locationX %></td>
+    <td><%= planet.locationY %></td>
+    <td><%= planet.manufacturing %></td>
+    <td><%= planet.growth %></td>
+    <td><%= planet.research %></td>
+    <td><%= planet.population %></td>
+    <td><%= planet.science %></td>
+    <td><%= planet.name %></td>
+    <td><%= link_to 'Show', planet %></td>
+    <td><%= link_to 'Edit', edit_planet_path(planet) %></td>
+    <td><%= link_to 'Destroy', planet, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Planet', new_planet_path %>
