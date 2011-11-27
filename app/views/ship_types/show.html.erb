@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @ship_type.name %>
+</p>
+
+<p>
+  <b>Attack:</b>
+  <%= @ship_type.attack %>
+</p>
+
+<p>
+  <b>Defense:</b>
+  <%= @ship_type.defense %>
+</p>
+
+<p>
+  <b>Speed:</b>
+  <%= @ship_type.speed %>
+</p>
+
+
+<%= link_to 'Edit', edit_ship_type_path(@ship_type) %> |
+<%= link_to 'Back', ship_types_path %>

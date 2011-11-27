@@ -1,4 +1,6 @@
 Sterne::Application.routes.draw do
+  resources :ship_types
+
   resources :players
 
   # The priority is based upon order of creation:

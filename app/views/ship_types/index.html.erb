@@ -1,0 +1,29 @@
+<h1>Listing ship_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Attack</th>
+    <th>Defense</th>
+    <th>Speed</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ship_types.each do |ship_type| %>
+  <tr>
+    <td><%= ship_type.name %></td>
+    <td><%= ship_type.attack %></td>
+    <td><%= ship_type.defense %></td>
+    <td><%= ship_type.speed %></td>
+    <td><%= link_to 'Show', ship_type %></td>
+    <td><%= link_to 'Edit', edit_ship_type_path(ship_type) %></td>
+    <td><%= link_to 'Destroy', ship_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ship type', new_ship_type_path %>

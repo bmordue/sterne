@@ -1,0 +1,2 @@
+module ShipTypesHelper
+end
