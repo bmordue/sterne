@@ -4,7 +4,7 @@ class Planet < ActiveRecord::Base
    
    validates_numericality_of :manufacturing
    validates_numericality_of :growth
-   validates_numericality_of :production
+   validates_numericality_of :population
    validates_numericality_of :research
    validates_numericality_of :science
 
