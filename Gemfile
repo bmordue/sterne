@@ -28,9 +28,13 @@ gem 'sqlite3', '1.3.3'
 # and rake tasks are available in development mode:
  group :development do
    gem 'rspec-rails', '2.6.1'
+   gem 'webrat', '0.7.1' #Ben added this; not sure why it was in test but not development
+
+   gem 'cucumber' #for Behaviour Driven Development ;-)
  end
 
  group :test do
    gem 'rspec-rails', '2.6.1'
    gem 'webrat', '0.7.1'
+   gem 'cucumber' #for BDD
  end

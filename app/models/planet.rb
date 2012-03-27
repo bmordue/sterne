@@ -8,4 +8,8 @@ class Planet < ActiveRecord::Base
    validates_numericality_of :research
    validates_numericality_of :science
 
+  belongs_to :player
+  belongs_to :universe
+  has_many :ships
+
 end

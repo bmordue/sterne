@@ -1,4 +1,5 @@
 class Ship < ActiveRecord::Base
+
    validates_presence_of :player_id #TODO: should validate that player_id is a valid player
  
 
@@ -9,4 +10,9 @@ class Ship < ActiveRecord::Base
    #TODO: validate planet id in destination   
    
    validates_presence_of :shiptype_id #TODO: should validate for shiptype
+
+  belongs_to :player
+  belongs_to :universe
+  belongs_to :planet
+
 end
