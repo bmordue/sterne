@@ -3,6 +3,8 @@
 <table>
   <tr>
     <th>Turn</th>
+    <th>Planets</th>
+    <th>Ships</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,6 +13,8 @@
 <% @universes.each do |universe| %>
   <tr>
     <td><%= universe.turn %></td>
+    <td><%= universe.planets.count %></td>
+    <td><%= universe.ships.count %></td>
     <td><%= link_to 'Show', universe %></td>
     <td><%= link_to 'Edit', edit_universe_path(universe) %></td>
     <td><%= link_to 'Destroy', universe, :confirm => 'Are you sure?', :method => :delete %></td>

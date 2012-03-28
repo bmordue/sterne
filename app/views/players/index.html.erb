@@ -4,6 +4,8 @@
   <tr>
     <th>Name</th>
     <th>Email</th>
+    <th>Planets</th>
+    <th>Ships</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,6 +15,8 @@
   <tr>
     <td><%= player.name %></td>
     <td><%= player.email %></td>
+    <td><%= player.planets.count %></td>
+    <td><%= player.ships.count %></td>
     <td><%= link_to 'Show', player %></td>
     <td><%= link_to 'Edit', edit_player_path(player) %></td>
     <td><%= link_to 'Destroy', player, :confirm => 'Are you sure?', :method => :delete %></td>
