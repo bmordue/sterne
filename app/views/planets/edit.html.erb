@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @planet %> |
-<%= link_to 'Back', planets_path %>
+<%= link_to 'Show', [@universe, @planet] %> |
+<%= link_to 'Back', universe_planets_path(@universe) %>

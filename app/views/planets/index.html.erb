@@ -1,5 +1,6 @@
 <h1>Listing planets</h1>
 
+<% if @universe.planets.count > 0 %>
 <table>
   <tr>
     <th>Player</th>
@@ -27,13 +28,22 @@
     <td><%= planet.population %></td>
     <td><%= planet.science %></td>
     <td><%= planet.name %></td>
-    <td><%= link_to 'Show', planet %></td>
-    <td><%= link_to 'Edit', edit_planet_path(planet) %></td>
-    <td><%= link_to 'Destroy', planet, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', [@universe, planet] %></td>
+    <td><%= link_to 'Edit', edit_universe_planet_path(@universe, planet) %></td>
+    <td><%= link_to 'Destroy', [@universe, planet], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Planet', new_planet_path %>
+<% else %>
+  <p> This universe does not contain any planets. </p>
+<% end %>
+
+<p>
+
+<%= link_to 'New Planet', new_universe_planet_path(@universe) %> | 
+<%= link_to 'Back', @universe %>
+
+</p>

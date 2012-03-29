@@ -1,8 +1,14 @@
 class PlanetsController < ApplicationController
+
+  # changes to make planets a nested resource underneath universe
+  before_filter :get_universe
+
+
   # GET /planets
   # GET /planets.xml
   def index
-    @planets = Planet.all
+
+    @planets = @universe.planets
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +19,8 @@ class PlanetsController < ApplicationController
   # GET /planets/1
   # GET /planets/1.xml
   def show
-    @planet = Planet.find(params[:id])
+
+    @planet = @universe.planets.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +31,7 @@ class PlanetsController < ApplicationController
   # GET /planets/new
   # GET /planets/new.xml
   def new
-    @planet = Planet.new
+    @planet = @universe.planets.build(params[:id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,17 +41,18 @@ class PlanetsController < ApplicationController
 
   # GET /planets/1/edit
   def edit
-    @planet = Planet.find(params[:id])
+    @planet = @universe.planets.find(params[:id])
   end
 
   # POST /planets
   # POST /planets.xml
   def create
-    @planet = Planet.new(params[:planet])
+
+    @planet = @universe.planets.build(params[:planet])
 
     respond_to do |format|
       if @planet.save
-        format.html { redirect_to(@planet, :notice => 'Planet was successfully created.') }
+        format.html { redirect_to([@universe, @planet], :notice => 'Planet was successfully created.') }
         format.xml  { render :xml => @planet, :status => :created, :location => @planet }
       else
         format.html { render :action => "new" }
@@ -56,11 +64,11 @@ class PlanetsController < ApplicationController
   # PUT /planets/1
   # PUT /planets/1.xml
   def update
-    @planet = Planet.find(params[:id])
+    @planet = @universe.planets.find(params[:id])
 
     respond_to do |format|
       if @planet.update_attributes(params[:planet])
-        format.html { redirect_to(@planet, :notice => 'Planet was successfully updated.') }
+        format.html { redirect_to([@universe, @planet], :notice => 'Planet was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -72,12 +80,20 @@ class PlanetsController < ApplicationController
   # DELETE /planets/1
   # DELETE /planets/1.xml
   def destroy
-    @planet = Planet.find(params[:id])
+    @planet = @universe.planets.find(params[:id])
     @planet.destroy
 
     respond_to do |format|
-      format.html { redirect_to(planets_url) }
+      format.html { redirect_to(universe_planets_path(@universe)) }
       format.xml  { head :ok }
     end
   end
+
+  # change for nested resources
+  private
+    
+  def get_universe
+    @universe = Universe.find(params[:universe_id])
+  end
+
 end

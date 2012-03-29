@@ -1,9 +1,12 @@
 Sterne::Application.routes.draw do
   resources :games
 
-  resources :universes
+  resources :universes do 
+    resources :planets
+#    resources :ships
+  end
 
-  resources :planets
+#  resources :planets
 
   resources :ships
 
