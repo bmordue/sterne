@@ -6,5 +6,23 @@
 </p>
 
 
+<h2>Planets</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>locX</th>
+    <th>locY</th>
+  </tr>
+
+  <% for planet in @universe.planets %>
+    <tr>
+     <td> <%= planet.name%> </td>
+     <td> <%= planet.locationX %> </td>
+     <td> <%= planet.locationY %> </td>
+    </tr>
+  <% end %>
+
+</table>
+
 <%= link_to 'Edit', edit_universe_path(@universe) %> |
 <%= link_to 'Back', universes_path %>
