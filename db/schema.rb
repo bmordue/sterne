@@ -10,13 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120329163901) do
+ActiveRecord::Schema.define(:version => 20120330070814) do
 
   create_table "games", :force => true do |t|
     t.integer  "universe_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "games_players", :id => false, :force => true do |t|
+    t.integer  "game_id",    :null => false
+    t.integer  "player_id",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "games_players", ["game_id", "player_id"], :name => "index_games_players_on_game_id_and_player_id", :unique => true
 
   create_table "planets", :force => true do |t|
     t.integer  "player_id"
