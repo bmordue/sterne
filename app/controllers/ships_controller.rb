@@ -38,13 +38,13 @@ class ShipsController < ApplicationController
 
   # GET /ships/1/edit
   def edit
-    @ship = universe.ships.find(params[:id])
+    @ship = @universe.ships.find(params[:id])
   end
 
   # POST /ships
   # POST /ships.xml
   def create
-    @ship = universe.ships.build(params[:ship])
+    @ship = @universe.ships.build(params[:ship])
 
     respond_to do |format|
       if @ship.save
@@ -89,5 +89,6 @@ class ShipsController < ApplicationController
   # for nested resource
   def get_universe
     @universe = Universe.find(params[:universe_id])
+  end
   
 end
