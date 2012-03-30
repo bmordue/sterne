@@ -3,12 +3,9 @@ Sterne::Application.routes.draw do
 
   resources :universes do 
     resources :planets
-#    resources :ships
+    resources :ships
   end
 
-#  resources :planets
-
-  resources :ships
 
   resources :ship_types
 

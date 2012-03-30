@@ -1,6 +1,6 @@
-<h1>Editing ship</h1>
+<h1>Editing ship in Universe <%= @universe.id %> </h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @ship %> |
-<%= link_to 'Back', ships_path %>
+<%= link_to 'Show', [@universe, @ship] %> |
+<%= link_to 'Back', universe_ships_path(@universe) %>

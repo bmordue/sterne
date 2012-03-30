@@ -1,5 +1,5 @@
-<h1>New ship</h1>
+<h1>New ship in Universe <%= @universe.id %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', ships_path %>
+<%= link_to 'Back', universe_ships_path(@universe) %>
