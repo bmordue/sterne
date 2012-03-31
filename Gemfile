@@ -13,6 +13,8 @@ gem 'pg'
 
 gem 'heroku'
 
+gem 'bcrypt-ruby'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
