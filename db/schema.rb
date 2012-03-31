@@ -14,15 +14,15 @@ ActiveRecord::Schema.define(:version => 20120330123159) do
 
   create_table "games", :force => true do |t|
     t.integer  "universe_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "games_players", :id => false, :force => true do |t|
     t.integer  "game_id",    :null => false
     t.integer  "player_id",  :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "games_players", ["game_id", "player_id"], :name => "index_games_players_on_game_id_and_player_id", :unique => true
@@ -37,16 +37,16 @@ ActiveRecord::Schema.define(:version => 20120330123159) do
     t.integer  "population"
     t.integer  "science"
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.integer  "universe_id"
   end
 
   create_table "players", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.integer  "game_id"
   end
 
@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(:version => 20120330123159) do
     t.integer  "attack"
     t.integer  "defense"
     t.integer  "speed"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "ships", :force => true do |t|
@@ -66,15 +66,15 @@ ActiveRecord::Schema.define(:version => 20120330123159) do
     t.integer  "destination"
     t.integer  "hitpoints"
     t.integer  "shiptype_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "universe_id"
   end
 
   create_table "universes", :force => true do |t|
     t.integer  "turn"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
