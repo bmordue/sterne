@@ -7,7 +7,11 @@ gem 'rails'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 #gem 'sqlite3', '1.3.3'
-gem 'sqlite3'
+#gem 'sqlite3'
+# use PostgresQL for Heroku (dev and prod)
+gem 'pg'
+
+gem 'heroku'
 
 # Use unicorn as the web server
 # gem 'unicorn'
