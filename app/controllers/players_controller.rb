@@ -1,4 +1,8 @@
 class PlayersController < ApplicationController
+  
+  before_filter :authenticate_user!, :only => [:edit, :update]
+
+
   # GET /players
   # GET /players.xml
   def index
@@ -80,4 +84,12 @@ class PlayersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  private
+  
+#  def authenticate
+#    deny_access unless signed_in?
+#  end
+
+
 end

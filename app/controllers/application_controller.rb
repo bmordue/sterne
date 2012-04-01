@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  include SessionsHelper
   force_ssl
 
   private 
@@ -12,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     if current_user.nil?
-       redirect_to login_url, :alert => "Please log in to continue"
+       redirect_to log_in_path, :alert => "Please log in to continue"
     end
   end
 

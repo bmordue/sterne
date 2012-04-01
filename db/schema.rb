@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120331140932) do
+ActiveRecord::Schema.define(:version => 20120401161123) do
 
   create_table "games", :force => true do |t|
     t.integer  "universe_id"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(:version => 20120331140932) do
     t.integer  "game_id"
     t.string   "password_digest"
   end
+
+  add_index "players", ["email"], :name => "index_players_on_email", :unique => true
 
   create_table "ship_types", :force => true do |t|
     t.string   "name"
