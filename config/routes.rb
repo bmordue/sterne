@@ -1,9 +1,11 @@
 Sterne::Application.routes.draw do
 
   get "log_in" => "sessions#new", :as => "log_in"
+  get "log_out" => "sessions#destroy", :as => "log_out"
 
   get "sign_up" => "players#new", :as => "sign_up"
-  root :to => "players#new"
+
+  root :to => "games#index"
  
   resources :sessions
 

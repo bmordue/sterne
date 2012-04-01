@@ -7,6 +7,8 @@ class Player < ActiveRecord::Base
    validates_presence_of :name
    validates_presence_of :email
 
+  validates :email, :presence => true, :uniqueness => true
+
   belongs_to :game
   has_many :ships
   has_many :planets
