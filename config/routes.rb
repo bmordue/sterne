@@ -1,4 +1,12 @@
 Sterne::Application.routes.draw do
+
+  get "log_in" => "sessions#new", :as => "log_in"
+
+  get "sign_up" => "players#new", :as => "sign_up"
+  root :to => "players#new"
+ 
+  resources :sessions
+
   resources :games
 
   resources :universes do 
