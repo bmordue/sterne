@@ -1,5 +1,7 @@
 class PlanetsController < ApplicationController
 
+  before_filter :authenticate_user!, :only => [:edit, :update]
+
   # changes to make planets a nested resource underneath universe
   before_filter :get_universe
 
