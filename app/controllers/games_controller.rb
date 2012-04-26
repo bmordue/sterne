@@ -80,4 +80,20 @@ class GamesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  # PUT /games/1/join
+  # PUT /games/1/join.xml
+  def join
+    
+    @game = Game.find(params[:id])
+
+    @player = Player.find(:session[:user_id] )
+    @game.players << @player
+
+    respond_to do |format|
+      format.html { redirect_to(games_url) }
+      format.xml  { head :ok } 
+    end
+  end
+
 end

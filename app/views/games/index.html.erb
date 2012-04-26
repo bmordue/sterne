@@ -14,8 +14,8 @@
     <td><%= game.universe_id %></td>
     <td><%= game.players.count %></td>
     <td><%= link_to 'Show', game %></td>
+    <td><%= link_to 'Join game', join_game_path(game), :method => :post %></td>
     <td><%= link_to 'Edit', edit_game_path(game) %></td>
-    <td><%= link_to 'Destroy', game, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

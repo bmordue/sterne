@@ -1,11 +1,13 @@
 Sterne::Application.routes.draw do
 
+  root :to => "games#index"
+
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
 
   get "sign_up" => "players#new", :as => "sign_up"
 
-  root :to => "games#index"
+  match "game/:id/join" => "games#join", :as => "join_game", :via => [:post]
  
   resources :sessions
 

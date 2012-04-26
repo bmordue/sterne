@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120401161123) do
+ActiveRecord::Schema.define(:version => 20120426200704) do
 
   create_table "games", :force => true do |t|
     t.integer  "universe_id"
@@ -19,10 +19,8 @@ ActiveRecord::Schema.define(:version => 20120401161123) do
   end
 
   create_table "games_players", :id => false, :force => true do |t|
-    t.integer  "game_id",    :null => false
-    t.integer  "player_id",  :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer "game_id",   :null => false
+    t.integer "player_id", :null => false
   end
 
   add_index "games_players", ["game_id", "player_id"], :name => "index_games_players_on_game_id_and_player_id", :unique => true
