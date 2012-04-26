@@ -26,6 +26,8 @@ class UniversesController < ApplicationController
   def new
     @universe = Universe.new
 
+    @universe.turn = 1
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @universe }
@@ -41,6 +43,8 @@ class UniversesController < ApplicationController
   # POST /universes.xml
   def create
     @universe = Universe.new(params[:universe])
+
+    @universe.turn = 1
 
     respond_to do |format|
       if @universe.save
