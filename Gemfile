@@ -15,6 +15,8 @@ gem 'heroku'
 
 gem 'bcrypt-ruby'
 
+gem 'jquery-rails', '>= 1.0.12'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
