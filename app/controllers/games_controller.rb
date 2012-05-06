@@ -81,13 +81,13 @@ class GamesController < ApplicationController
     end
   end
 
-  # PUT /games/1/join
-  # PUT /games/1/join.xml
+  # POST /games/1/join
+  # POST /games/1/join.xml
   def join
     
     @game = Game.find(params[:id])
 
-    @player = Player.find(:session[:user_id] )
+    @player = Player.find(session[:user_id] )
     @game.players << @player
 
     respond_to do |format|

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120426200704) do
+ActiveRecord::Schema.define(:version => 20120501193304) do
 
   create_table "games", :force => true do |t|
     t.integer  "universe_id"
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(:version => 20120426200704) do
     t.string   "email"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
-    t.integer  "game_id"
     t.string   "password_digest"
   end
 

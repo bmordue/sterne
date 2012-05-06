@@ -12,7 +12,6 @@
 <% @games.each do |game| %>
   <tr>
     <td><%= game.universe_id %></td>
-    <td><%= game.players.count %></td>
     <td><%= link_to 'Show', game %></td>
     <td><%= link_to 'Join game', join_game_path(game), :method => :post %></td>
     <td><%= link_to 'Edit', edit_game_path(game) %></td>
