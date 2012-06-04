@@ -1,5 +1,5 @@
-# Ruby on Rails Tutorial: first application
+# sterne: simple Stars! clone
 
-This is the first application for
+Leans heavily on 
 [*Ruby on Rails Tutorial: Learn Rails by Example*](http://railstutorial.org/) 
 by [Michael Hartl](http://michaelhartl.com/).
